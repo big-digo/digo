@@ -15,7 +15,7 @@ import com.cetc.bigdata.analysis.web.service.AuthenticationService;
 
 @RestController
 @RequestMapping("/admin")
-public class AdminController {
+public class AdminController {  
 
     @Autowired
     private AdminSerivce adminSerivce;
