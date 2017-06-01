@@ -57,6 +57,11 @@ app.config(['$urlRouterProvider',function($urlRouterProvider){
                     templateUrl: "template/datasource/data_policy.html",
                     controller: 'dataModelCtrl'
                 })
+                .state('app.report', {
+                    url: '/report',
+                    templateUrl: 'template/report/report.html',
+                    controller: 'reportCtrl'
+                })
         }]
     );
 

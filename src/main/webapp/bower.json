@@ -30,7 +30,9 @@
     "angular-loading-bar": "~0.7.1",
     "angular-scroll": "~0.7.0",
     "angular-translate": "~2.7.2",
-    "angular-translate-loader-static-files": "~2.7.2"
+    "angular-translate-loader-static-files": "~2.7.2",
+    "jstree": "^3.3.4",
+    "ng-js-tree": "^0.0.10"
   },
   "resolutions": {
     "jquery": "~2.1.0",

@@ -1,4 +1,3 @@
-(function () {
 
     angular.module('app.i18n', ['pascalprecht.translate'])
         .config(['$translateProvider', i18nConfig])
@@ -86,4 +85,4 @@
 
         }
 
-})();
+

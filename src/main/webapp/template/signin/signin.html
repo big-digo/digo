@@ -1,4 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Big Data Analysis Platform</title>
+    <style>
+        .contain {
+            width: 1180px;
+            margin: 0 auto;
+        }
 
+        .header {
+            height: 95px;
+        }
+
+        .header img {
+            vertical-align: middle;
+        }
+
+        .header .logo {
+            float: left;
+            line-height: 95px;
+            background: url("images/blogo.png") no-repeat 50% 50%;
+            width: 250px;
+            height: 92px;
+        }
+
+        .header .logo a {
+            width: 250px;
+            height: 92px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .navbar {
+            float: right;
+            width: 700px;
+            word-spacing: -6px;
+        }
+        .navbar li {
+            width: 100px;
+            display: inline-block;
+            font-size: 14px;
+            height: 30px;
+            margin-top: 30px;
+            padding: 5px 0;
+            text-align: center;
+        }
+        .navbar .active {
+            background: url("images/u84.png") no-repeat;
+        }
+        .navbar .active a {
+            color: #fff;
+        }
+
+        .main-photo {
+            background: url("images/login-bg.jpg") no-repeat 50% 0;
+            height: 430px;
+        }
+
+        .loginFrame {
+            width: 285px;
+            height: 330px;
+            position: absolute;
+            top: 140px;
+            left: 50%;
+            color: #D7D7D7;
+            margin-left: 310px;
+            border: 5px solid;
+            border-color: rgba(50, 50, 50, 0.5);
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            display: block;
+        }
+
+        .login-bg {
+            background-color: black;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            /* border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px; */
+            opacity: .5;
+            filter: alpha(opacity=50);
+            /* IE 8 */
+        }
+
+        .login-cont {
+            z-index: 6;
+            position: absolute;
+        }
+
+        .login-nav {
+            border-bottom: 1px solid #999;
+            height: 48px;
+            width: 275px;
+        }
+        .login-nav label {
+            color: #fff;
+            width: 150px;
+            font-size: 20px;
+            line-height: 48px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .user-login, .userInfo {
+            margin: 0 25px;
+        }
+
+        .userInfo {
+            margin-top: 20px;
+            min-height: 160px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .userInfo input[type='text'], .userInfo input[type='password'] {
+            color: black;
+            height: 30px;
+        }
+
+        .user-login div, .userInfo div {
+            padding: 10px 0;
+        }
+
+        .userInfo input[type='text'].img-code {
+            width: 140px;
+        }
+
+        .account .text-primary {
+            line-height: 21px;
+        }
+
+        .userInfo .text-primary:hover {
+            text-decoration: underline;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            /* padding: 6px 12px;*/
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+            ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+            .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .form-control:focus {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+            rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+            rgba(102, 175, 233, .6);
+        }
+
+        .form-control::-moz-placeholder {
+            color: #999;
+            opacity: 1;
+        }
+
+        .form-control:-ms-input-placeholder {
+            color: #999;
+        }
+
+        .form-control::-webkit-input-placeholder {
+            color: #999;
+        }
+
+        .inline-block {
+            display: inline-block;
+            zoom: 1;
+        }
+
+        .forgetBtn {
+            display: inherit;
+            cursor: pointer;
+            height: auto;
+        }
+        .forgetBtn:hover {
+            color: #A1A1A1;
+            text-decoration: underline;
+        }
+
+        #loginBtn {
+            width: 100%;
+        }
+
+        .contain {
+            width: 1180px;
+            margin: 0 auto;
+        }
+
+        .cont-title {
+            text-align: center;
+            height: 100px;
+            padding: 90px 0 50px 0;
+        }
+
+        .cont-title hr {
+            width: 100%;
+            height: 0;
+            border: 1px solid #e4e4e4;
+            border-width: 1px 0 0 0;
+            margin-top: -15px;
+        }
+
+        .cont-title h2 {
+            font-weight: normal;
+            background-color: #fff;
+            font-size: 33px;
+            display: inline;
+            padding: 0 20px;
+        }
+
+        .text-primary-blue {
+            color: #119DEE;
+        }
+
+        .case-cont {
+            letter-spacing: -6px;
+        }
+
+        .case-cont .case-block {
+            width: 48%;
+            display: inline-block;
+            letter-spacing: 0;
+            font-size: 14px;
+            line-height: 25px;
+            vertical-align: top;
+        }
+
+        .case-cont .case-block:first-child {
+            padding-right: 4%;
+        }
+
+        .case-cont .case-block-title {
+            background: url(images/u1888.png) no-repeat;
+            color: white;
+            height: 33px;
+            line-height: 33px;
+            border-bottom: 1px solid #199ED8;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-indent: 10px;
+            position: relative;
+        }
+        .case-cont .case-block-title span {
+            position: relative;
+            left: 120px;
+            color: #000;
+        }
+
+        .copyright {
+            font-weight: 400;
+            font-size: 12px;
+            background-color: #171824;
+            color: #575C72;
+            line-height: 20px;
+            padding-top: 20px;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+        .btn {
+            height: auto;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .btn-warning {
+            width:100%;
+            color: #fff;
+            background-color: #119DEE;
+            border-color: #119DEE;
+        }
+    </style>
+</head>
+<body>
 <div class="contain header">
     <div class="logo">
         <a href="" title="DataMiner,新一代云端数据分析平台">
@@ -28,39 +339,43 @@
 </div>
 <div class="main-photo">
     <a href="javascript:void(0);" title="DataMiner,零门槛大数据分析平台"></a>
+
     <div class="loginFrame right">
         <div class="login-bg"></div>
         <div class="login-cont">
 			<span id="spanLabel" class="login-nav font14 inline-block">
 				<label>用户登录</label>
 			</span>
-            <div class="userInfo">
-                <div class="account">
-                    <input type="text" maxlength="40"  class="form-control" autocomplete="off" placeholder="用户名">
+            <form action="logon" method="post">
+                <!-- <form action="login" method="post"> --><!-- 不能用/login，spring security默认有/login，会冲突 -->
+                <div class="userInfo">
+                    <div class="account">
+                        <input type="text" maxlength="40"  class="form-control" autocomplete="off" placeholder="用户名" name="username">
+                    </div>
+                    <div class="account">
+                        <input type="password" maxlength="20"  class="form-control" placeholder="密码" name="password">
+                    </div>
+                    <div class="account">
+                        <label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="1"><span>记住我</span></label>
+                        <a id="forgetBtn" class="pull-right forgetBtn" href="/forgetPwd/phoneFind">忘记密码?</a>
+                    </div>
                 </div>
-                <div class="account">
-                    <input type="password" maxlength="20"  class="form-control" placeholder="密码">
+                <div class="user-login font13">
+                    <div class="imgCode account">
+                        <input type="submit" id="loginBtn" value="登&nbsp;&nbsp;&nbsp; 录" class="btn btn-warning" >
+                    </div>
                 </div>
-                <div class="account">
-                    <label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="1"><span>记住我</span></label>
-                    <a id="forgetBtn" class="pull-right forgetBtn" href="/forgetPwd/phoneFind">忘记密码?</a>
-                </div>
-            </div>
-            <div class="user-login font13">
-                <div class="imgCode account">
-                    <input type="button" id="loginBtn" value="登&nbsp;&nbsp;&nbsp; 录" class="btn btn-warning" data-ng-click = "login();">
-                </div>
-            </div>
 
-
+            </form>
         </div>
     </div>
+
 </div>
 <div class = "contain">
-<div class="cont-title">
-    <h2 class="text-primary-blue">新一代大数据分析平台，让数据真正服务于工作</h2>
-    <hr>
-</div>
+    <div class="cont-title">
+        <h2 class="text-primary-blue">新一代大数据分析平台，让数据真正服务于工作</h2>
+        <hr>
+    </div>
 
     <div class="case-cont">
         <div class="case-block">
@@ -70,13 +385,13 @@
                 1.	 支持结构化数据，半结构化以及非结构化数据；
                 2.	 支持PC、WIFI、APP、基站、手环等数据源。
             </p>
-            <div class="case-block-title">优势二<span>向导式数据采集</div>
-             <p>本平台提供向导式的数据采集方法，用户只需要按照平台提供的向导步骤即可把用户数据导入大数据分析平台，数据采集过程非常简单、方便。
-                 功能特点：
-                 1.	简单易用：数据传输服务无需单独安装驱动程序或应用程序，无需对源数据库做大幅改动。提供可视化管理界面，仅需几步简单配置即可开启数据传输导入；
-                 2.	丰富的采集手段：支持数据同步实时采集、异步采集、增量采集等；
-                 3.	采集方法多样：支持日志采集、网络数据采集、代理采集、API采集等。
-             </p>
+            <div class="case-block-title">优势二<span>向导式数据采集</span></div>
+            <p>本平台提供向导式的数据采集方法，用户只需要按照平台提供的向导步骤即可把用户数据导入大数据分析平台，数据采集过程非常简单、方便。
+                功能特点：
+                1.	简单易用：数据传输服务无需单独安装驱动程序或应用程序，无需对源数据库做大幅改动。提供可视化管理界面，仅需几步简单配置即可开启数据传输导入；
+                2.	丰富的采集手段：支持数据同步实时采集、异步采集、增量采集等；
+                3.	采集方法多样：支持日志采集、网络数据采集、代理采集、API采集等。
+            </p>
             <div class="case-block-title">优势三<span>自助式数据处理服务</span></div>
             <p>用户的原始数据往往是散乱的，而进行大数据分析的数据需要按照一定的格式进行设置，因此必须对用户原始数据进行一些处理，从而达到数据分析要求。本平台提供了自助式的数据服务，包括数据预处理、增强、归一化等。
                 功能特点：
@@ -148,3 +463,5 @@
     </div>
 </div>
 
+</body>
+</html>

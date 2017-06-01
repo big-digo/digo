@@ -11,12 +11,14 @@
         ,'mgo-angular-wizard'
       //  ,'textAngular'
         ,'angular-loading-bar'
+
     //    ,'duScroll'
 
 
         //
         ,'app.layout'
         ,'app.i18n'
+        ,'ngJsTree'
       //  ,'app.ui'
      //   ,'app.ui.form'
       //  ,'app.table'

@@ -5,6 +5,26 @@
         "DATA_MODEL":"数据模型",
         "DATA_POLICY":"数据任务"
     },
+    "REPORT_MANAGE":{
+        "REPORT":"报告"
+    },
+    "COMMON": {
+        "OK": "确认",
+        "CANCEL": "取消",
+        "SAVE": "保存",
+        "LOADING": "玩命加载中...",
+        "REFRESH": "刷新",
+        "EDIT": "编辑",
+        "CONFIRM_DELETE": "真的想好了要删除吗!!!",
+        "TIP": "提示",
+        "SUCCESS": "成功!",
+        "FAIL": "失败!",
+        "DEFAULT_CATEGORY": "默认分类",
+        "NOT_EMPTY": "不能为空!",
+        "NEW": "新建",
+        "COPY": "复制",
+        "DELETE": "删除"
+    },
     "JOHN_Doe": "李四",
     "LISA": "丽莎",
     "MY_PROFILE": "个人资料",
