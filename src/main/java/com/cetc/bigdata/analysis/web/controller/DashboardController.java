@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSONObject;
 
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/dashboard")
 public class DashboardController extends BaseController {
 
 	public static final Logger logger = LoggerFactory.getLogger(DashboardController.class);
