@@ -55,7 +55,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>HiddenHttpMethodFilter</filter-name>
-		<servlet-name>appServlet</servlet-name>
+		<servlet-name>dispatcher</servlet-name>
 	</filter-mapping>
 	<filter><!-- Spring Security配置 -->
 		<filter-name>springSecurityFilterChain</filter-name>
