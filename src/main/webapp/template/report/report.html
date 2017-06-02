@@ -1,103 +1,56 @@
 <!-- Content Wrapper. Contains page content -->
-<div id="inner-container" class="page">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="box box-solid">
-                <div class="box-header with-border">
-                    <i class="fa fa-folder"></i><h3 class="box-title" >{{'REPORT_MANAGE.REPORT'|translate}}</h3>
-                    <div class="box-tools pull-right">
-                        <i class="glyphicon glyphicon-plus toolbar-icon" ng-click="newBoard()" title="{{'COMMON.NEW'|translate}}"></i>&nbsp;&nbsp;
-                        <i class="fa fa-copy toolbar-icon" ng-click="copyNode()" title="{{'COMMON.COPY'|translate}}"></i>&nbsp;&nbsp;
-                        <i class="fa fa-edit toolbar-icon" ng-click="editNode()" title="{{'COMMON.EDIT'|translate}}"></i>&nbsp;&nbsp;
-                        <i class="fa fa-trash-o toolbar-icon"  ng-click="deleteNode()" title="{{'COMMON.DELETE'|translate}}"></i>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div id="boardTreeID" js-tree="treeConfig" should-apply="applyModelChanges()" ng-model="treeData" tree="treeInstance"
-                         tree-events-obj="treeEventsObj"></div>
+<div id="inner-container" >
+
+    <div class="g-sd" >
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <i class="fa fa-folder"></i><h3 class="box-title" >{{'REPORT_MANAGE.REPORT'|translate}}</h3>
+                <div class="box-tools pull-right" style="position: relative;">
+                    <i class="glyphicon glyphicon-plus toolbar-icon" id="addItem" title="{{'COMMON.NEW'|translate}}" data-toggle-add></i>&nbsp;&nbsp;
+                    <i class="fa fa-copy toolbar-icon" ng-click="copyNode()" title="{{'COMMON.COPY'|translate}}"></i>&nbsp;&nbsp;
+                    <i class="fa fa-edit toolbar-icon" ng-click="editNode()" title="{{'COMMON.EDIT'|translate}}"></i>&nbsp;&nbsp;
+                    <i class="fa fa-trash-o toolbar-icon"  ng-click="deleteNode()" title="{{'COMMON.DELETE'|translate}}"></i>
                 </div>
             </div>
-        </div>
-        <div class="col-md-9">
-            <div class="box" ng-show="optFlag == 'new' || optFlag == 'edit'">
-                <div class="box-header with-border">
-                    <h3 class="box-title">{{curBoard.name}}</h3>
-                </div>
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-danger pull-right">{{'COMMON.CANCEL'|translate}}</button>
-                                        <a class="btn btn-success pull-right" ui-sref="mine.view({id:curBoard.id})" target="_blank"
-                                                style="margin-right: 5px">{{'CONFIG.DASHBOARD.PREVIEW'|translate}}
-                                        </a>
-                                        <button type="submit" class="btn btn-success pull-right" ng-click="saveBoard()"
-                                                style="margin-right: 5px">{{'COMMON.SAVE'|translate}}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>{{'CONFIG.DASHBOARD.CATEGORY'|translate}}</label>
-                                        <select class="form-control" ng-model="curBoard.categoryId"
-                                                ng-options="w.id as w.name for w in categoryList"></select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group" ng-class="{'has-error': !(verify.boardName || curBoard.name.length)}">
-                                        <label>{{'CONFIG.DASHBOARD.NAME'|translate}}</label>
-                                        <input id="BoardName" ng-model="curBoard.name" class="form-control"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group" ng-repeat="alert in alerts">
-                                <div uib-alert ng-class="'alert-' + (alert.type || 'warning')"
-                                     close="alerts.splice($index, 1)">{{alert.msg}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <button type="submit" class="btn btn-success" ng-click="addRow()">
-                                        {{'CONFIG.DASHBOARD.ADD_ROW'|translate}}
-                                    </button>
-                                </div>
-                                <div class="col-md-1">
-                                    <button type="submit" class="btn btn-success" ng-click="addPramRow()">
-                                        {{'CONFIG.DASHBOARD.ADD_PARAMROW'|translate}}
-                                    </button>
-                                </div>
-                            </div>
-                            <div dnd-list="curBoard.layout.rows" dnd-allowed-types="['r']">
-                                <div class="dndPlaceholder row margin">
-                                    <div class="box sort-highlight" style="height: 130px"></div>
-                                </div>
-                                <div class="row margin" ng-repeat="row in curBoard.layout.rows">
-                                    <ng-switch on="row.type">
-                                        <div ng-switch-when="param">
-                                            <div ng-include="'org/cboard/view/config/board/param.html'"></div>
-                                        </div>
-                                        <div ng-switch-default>
-                                            <div ng-include="'org/cboard/view/config/board/widget.html'"></div>
-                                        </div>
-                                    </ng-switch>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </form>
-                    <!-- /.box-body -->
-                    <div class="box-footer">
-                    </div>
-                    <!-- /.box-footer-->
-                </div>
+            <div class="panel-body">
+                <div id = "treeID" js-tree="treeConfig" ng-model="treeData" should-apply="applyModelChanges()" tree="treeInstance" ></div>
+              <!--  <button data-ng-click = "refresh()">刷新</button>-->
             </div>
         </div>
     </div>
+    <div class="m-slide-icn" data-toggle-min-report>
+        <i class="fa fa-angle-left"></i>
+    </div>
+    <div class="g-mnc">
+        <div class="box box-info" >
+            <div class="box-header with-border">
+                <h3 class="box-title ng-binding">111</h3>
+            </div>
+            <form class="form-horizontal ng-pristine ng-valid">
+                <div class="box-body">
+                    <div class="form-group" ng-class="{'has-error': !(verify.categoryName || curCategory.name.length)}">
+                        <label class="col-sm-2 control-label ng-binding">看板分类名称</label>
+                        <div class="col-sm-10">
+                            <input id="CategoryName" ng-model="curCategory.name" class="form-control input-sm ng-pristine ng-untouched ng-valid">
+                        </div>
+                    </div>
+                </div>
+                <!-- ngRepeat: alert in alerts -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-danger pull-right ng-binding">取消</button>
+                    <button type="submit" ng-click="save()" class="btn btn-success pull-right ng-binding" style="margin-right: 5px">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="m-overlay hide top" style="z-index: 301; position: absolute; top: 30px; left: 130px;">
+        <div class="m-ctxMenu">
+            <ul>
+                <li class="z-clickable">新建报告</li>
+                <li class="z-clickable">新建文件夹</li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 </div>

@@ -2,18 +2,21 @@ package com.cetc.bigdata.analysis.web.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
 
-@RestController
-@RequestMapping("/rest")
+@Controller
+@RequestMapping("/dashboard")
 public class DashboardController extends BaseController {
 
 	public static final Logger logger = LoggerFactory.getLogger(DashboardController.class);
 
 	@RequestMapping(value = "/getBoardList")
+	@ResponseBody
 	public Object getBoardList() {
 		return JSONObject
 				.parse("[{\"id\":1,\"userId\":\"1\",\"categoryId\":1,\"name\":\"图表门户\",\"layout\":{\"rows\":[{\"type\":\"widget\","

@@ -6,12 +6,12 @@
  *
  * Configuration for DataSet/Widget/Dashboard tree
  */
-var jsTreeConfig1 = {
+var jsTreeConfig= {
     core : {
         multiple : false,
         animation: true,
         error : function(error) {
-            //$log.error('treeCtrl: error from js tree - ' + angular.toJson(error));
+            console.log('treeCtrl: error from js tree - ' + angular.toJson(error));
         },
         check_callback : function(operation, node, node_parent, node_position, more) {
             if (operation === "move_node") {
@@ -64,7 +64,7 @@ function jstree_GetSelectedNodes(domID) {
 function jstree_CvtVPath2TreeData (listIn) {
     var newParentId = 1;
     var listOut = [];
-    listOut.push({"id": "root", "parent": "#", "text": "Root", state: {opened: true}});
+    listOut.push({"id": "root", "parent": "#", "text": "Report Folder", state: {opened: true}});
     for (var i = 0; i < listIn.length; i++) {
         var arr = listIn[i].categoryName.split('/');
         arr.push(listIn[i].name);

@@ -104,7 +104,52 @@
         }
       };
     }
-  ]).directive('collapseNav', [
+  ]).directive('toggleMinReport', [
+        '$rootScope', function($rootScope) {
+          return {
+            restrict: 'A',
+            link: function(scope, ele, attrs) {
+              var  gsd = $('.g-sd'), slide =   $('.m-slide-icn'), mnc = $('.g-mnc');
+              ele.on('click', function(e) {
+                if (gsd.hasClass('z-close')) {
+                  gsd.removeClass('z-close');
+                } else {
+                  gsd.addClass('z-close');
+                }
+                if (mnc.hasClass('z-close')) {
+                  mnc.removeClass('z-close');
+                } else {
+                  mnc.addClass('z-close');
+                }
+                if (slide.hasClass('s-close')) {
+                  slide.removeClass('s-close');
+                } else {
+                  slide.addClass('s-close');
+                }
+                return e.preventDefault();
+              });
+            }
+          };
+        }
+      ]).directive('toggleAdd', [
+        '$rootScope', function($rootScope) {
+          return {
+            restrict: 'A',
+            link: function(scope, ele, attrs) {
+              var  overlay = $('.m-overlay');
+              ele.on('click', function(e) {
+                if (overlay.hasClass('hide')) {
+                  overlay.removeClass('hide');
+                } else {
+                  overlay.addClass('hide');
+                }
+               return e.stopPropagation();
+               // return e.preventDefault();
+              });
+            }
+          };
+        }
+      ]).directive('collapseNav', [
     function() {
       return {
         restrict: 'A',

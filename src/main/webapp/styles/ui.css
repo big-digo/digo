@@ -4,6 +4,106 @@
 .right{
     float:right;
 }
+#nav>li.open>.icon-has-ul {
+    transform: rotate(90deg);
+}
+/*#nav>li>.icon-has-ul{
+    transform: rotate(90deg);
+}*/
+
+.g-sd {
+    position: absolute;
+    /*z-index: 93;*/
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 224px;
+    border-right: 1px solid #dfdfdf;
+    overflow-y: auto;
+    background: #f9fafc;
+    height: 100%;
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -ms-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    transition: left 0.5s linear;
+}
+.g-sd.z-close {
+    left: -224px;
+}
+.m-slide-icn {
+    position: absolute;
+    top: 50%;
+    left: 224px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-radius: 0 2px 2px 0;
+    padding: 14px 3px;
+    z-index: 300;
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -ms-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    transition: left 0.5s linear;
+}
+.m-slide-icn:hover {
+    background: #e0e0e0;
+}
+.m-slide-icn.s-close {
+    left: 0;
+}
+.m-slide-icn.s-close .fa {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.g-mnc.z-close {
+    left: 0;
+}
+
+.g-mnc {
+    position: absolute;
+   /* z-index: 91;*/
+    left: 224px;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -ms-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    transition: left 0.5s linear;
+}
+.m-ctxMenu {
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
+    border-radius: 2px;
+}
+ol, ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+.m-ctxMenu li {
+    cursor: default;
+    position: relative;
+    font-size: 13px;
+    padding-left: 20px;
+    line-height: 32px;
+    box-sizing: border-box;
+    height: 32px;
+    width: 150px;
+    background-color: #fff;
+}
+.m-ctxMenu li:hover {
+    background-color: #e0e0e0;
+}
 /*
  * Component: Box
  * --------------
